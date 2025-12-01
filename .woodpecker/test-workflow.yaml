@@ -9,7 +9,10 @@ steps:
     commands:
       - echo "Resolv.conf:"
       - cat /etc/resolv.conf
-      - dig --verbose github.com
+      - id
+      - apt update -y
+      - apt install curl -y
+      - curl https://github.com --verbose
   - name: build
     image: docker.io/library/debian:13
     commands:
